@@ -1,5 +1,7 @@
 # android-engineering-skills
 
+[![HOL Guard](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dlennonpetrick%252Fandroid-engineering-skills%26metric%3Dtrust)](https://hol.org/registry/plugins/lennonpetrick%2Fandroid-engineering-skills)
+
 Skills that teach AI coding agents how to structure, write and test Android apps with Kotlin and Jetpack Compose.
 
 > **Works alongside Google's official [Android skills](https://github.com/android/skills).**
