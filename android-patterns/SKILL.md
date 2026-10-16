@@ -1,12 +1,7 @@
 ---
 name: android-patterns
-description: >
-  Defines all implementation patterns for Android features: Unidirectional Data Flow
-  (UDF), ViewModel design, Flow composition, error handling, repository pattern,
-  domain UseCases, and Compose UI patterns. Use this skill whenever implementing a
-  ViewModel, designing state or action models, writing a repository or UseCase,
-  composing Flows, handling errors, building Compose screens or components, or
-  reviewing code for correctness of reactive patterns or state management.
+description: "Defines all implementation patterns for Android features: Unidirectional Data Flow (UDF), ViewModel design, Flow composition, error handling, repository pattern, domain UseCases, and Compose UI patterns. Use this skill whenever implementing a ViewModel, designing state or action models, writing a repository or UseCase, composing Flows, handling errors, building Compose screens or components, or reviewing code for correctness of reactive patterns or state management."
+license: MIT
 ---
 
 # Android Patterns

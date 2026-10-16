@@ -1,11 +1,7 @@
 ---
 name: android-testing
-description: >
-  Defines testing standards for Android projects, including JUnit 5, Turbine,
-  Mockito or MockK, descriptive backtick test names, parameterized tests, and
-  flow testing patterns. Use this skill when creating, reviewing, or refactoring
-  unit tests for ViewModels, use cases, mappers, calculators, repositories, or
-  other pure Kotlin Android components.
+description: "Defines testing standards for Android projects, including JUnit 5, Turbine, Mockito or MockK, descriptive backtick test names, parameterized tests, and flow testing patterns. Use this skill when creating, reviewing, or refactoring unit tests for ViewModels, use cases, mappers, calculators, repositories, or other pure Kotlin Android components."
+license: MIT
 ---
 
 # Android Testing

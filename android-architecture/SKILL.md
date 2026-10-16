@@ -1,12 +1,7 @@
 ---
 name: android-architecture
-description: >
-  Defines project structure, package layout, layer boundaries, naming conventions,
-  and dependency injection setup for Android projects. Use this skill whenever
-  creating a new Android project, adding a new feature module, scaffolding a new
-  screen or flow, setting up DI bindings, naming any class or file, or deciding
-  which layer a piece of code belongs in. Also use it when reviewing or refactoring
-  existing code to ensure it follows the established architecture.
+description: "Defines project structure, package layout, layer boundaries, naming conventions, and dependency injection setup for Android projects. Use this skill whenever creating a new Android project, adding a new feature module, scaffolding a new screen or flow, setting up DI bindings, naming any class or file, or deciding which layer a piece of code belongs in. Also use it when reviewing or refactoring existing code to ensure it follows the established architecture."
+license: MIT
 ---
 
 # Android Architecture
