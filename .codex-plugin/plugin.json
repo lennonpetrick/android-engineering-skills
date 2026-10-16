@@ -1,6 +1,6 @@
 {
   "name": "android-engineering-skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Agent Skills that teach AI coding agents how to structure, write and test Android apps with Kotlin and Jetpack Compose.",
   "author": {
     "name": "Lennon Petrick",

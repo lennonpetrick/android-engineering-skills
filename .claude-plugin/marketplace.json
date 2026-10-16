@@ -1,0 +1,21 @@
+{
+  "name": "android-engineering-skills",
+  "description": "Agent Skills for structuring, writing and testing Android apps with Kotlin and Jetpack Compose.",
+  "owner": {
+    "name": "Lennon Petrick",
+    "url": "https://github.com/lennonpetrick"
+  },
+  "plugins": [
+    {
+      "name": "android-engineering-skills",
+      "description": "Agent Skills that teach AI coding agents how to structure, write and test Android apps with Kotlin and Jetpack Compose.",
+      "author": {
+        "name": "Lennon Petrick"
+      },
+      "category": "development",
+      "source": "./",
+      "homepage": "https://github.com/lennonpetrick/android-engineering-skills",
+      "license": "MIT"
+    }
+  ]
+}

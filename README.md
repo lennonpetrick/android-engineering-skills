@@ -50,6 +50,37 @@ If your project uses something else, like Koin or XML views, the skills still ap
 
 ## How to Set Up
 
+There are two ways to set up the skills:
+
+- **Install them as a plugin** if you use Claude Code or Codex. It takes one or two commands, and updating is one more.
+- **Copy the skill folders** into your project. This works with any agent, including Gemini in Android Studio.
+
+### Option 1: Install as a plugin
+
+#### Claude Code
+
+Run this inside a Claude Code session (version 2.1.275 or later):
+
+```
+/plugin install android-engineering-skills --marketplace lennonpetrick/android-engineering-skills
+```
+
+On earlier versions, add the marketplace first and then install:
+
+```
+/plugin marketplace add lennonpetrick/android-engineering-skills
+/plugin install android-engineering-skills@android-engineering-skills
+```
+
+#### Codex
+
+```bash
+codex plugin marketplace add lennonpetrick/android-engineering-skills
+codex plugin add android-engineering-skills@android-engineering-skills
+```
+
+### Option 2: Copy the skill folders
+
 Each coding agent reads skills from its own folder:
 
 | Agent | Project folder | User folder (all projects) |
@@ -58,7 +89,7 @@ Each coding agent reads skills from its own folder:
 | Codex | `.agents/skills/` | `~/.agents/skills/` |
 | Claude Code | `.claude/skills/` | `~/.claude/skills/` |
 
-### 1. Clone this repo
+#### 1. Clone this repo
 
 Clone it somewhere outside your project.
 
@@ -74,11 +105,11 @@ Windows (PowerShell):
 git clone --depth 1 https://github.com/lennonpetrick/android-engineering-skills.git "$env:TEMP\android-engineering-skills"
 ```
 
-### 2. Copy the skills into your project
+#### 2. Copy the skills into your project
 
 Run the commands for your agent from your project's root folder. They never overwrite anything: if you already have a skill with the same name, yours is kept.
 
-#### Gemini in Android Studio and Codex
+**Gemini in Android Studio and Codex**
 
 Both read `.agents/skills/`, so one copy works for both.
 
@@ -98,7 +129,7 @@ Get-ChildItem "$env:TEMP\android-engineering-skills\android-*" -Directory | Wher
 
 Android Studio also reads `.android-studio/skills/`. Versions before Android Studio Quail read `.skills/` instead.
 
-#### Claude Code
+**Claude Code**
 
 macOS / Linux:
 
@@ -114,11 +145,11 @@ New-Item -ItemType Directory -Force .claude\skills | Out-Null
 Get-ChildItem "$env:TEMP\android-engineering-skills\android-*" -Directory | Where-Object { -not (Test-Path ".claude\skills\$($_.Name)") } | Copy-Item -Destination .claude\skills -Recurse
 ```
 
-#### Other agents
+**Other agents**
 
 Any agent that supports the Agent Skills format works the same way. Copy the three folders into the skills folder it reads.
 
-### Use the skills in all your projects
+#### Use the skills in all your projects
 
 Use the user folder from the table as the destination instead. For example, for Claude Code:
 
@@ -150,11 +181,22 @@ You can also call a skill directly:
 | --- | --- |
 | Gemini in Android Studio | Type `@` in the chat and pick the skill |
 | Codex | `$android-patterns` |
-| Claude Code | `/android-patterns` |
+| Claude Code | `/android-patterns`, or `/android-engineering-skills:android-patterns` when installed as a plugin |
 
 ## Update the Skills
 
-Pull the latest version, then copy again with overwriting allowed. Change `.agents/skills` to the folder where you installed them.
+If you installed the skills as a plugin:
+
+```bash
+# Claude Code
+claude plugin update android-engineering-skills
+
+# Codex: refresh the marketplace, then install again
+codex plugin marketplace upgrade android-engineering-skills
+codex plugin add android-engineering-skills@android-engineering-skills
+```
+
+If you copied the folders, pull the latest version and copy again with overwriting allowed. Change `.agents/skills` to the folder where you installed them.
 
 macOS / Linux:
 
@@ -178,17 +220,7 @@ If you customize a skill, rename its folder and the `name` in its frontmatter. T
 
 ## Contributing
 
-Issues and pull requests are welcome, especially:
-
-- corrections where a rule is wrong, unclear or outdated
-- examples that make a rule easier for an agent to follow
-- new skills for topics not covered yet, such as navigation, Room, modularization or instrumented tests
-
-When editing or adding a skill:
-
-- Keep one skill per folder, with a `SKILL.md` that has `name` and `description` in its frontmatter.
-- Write the `description` so an agent can tell when to use the skill. Lead with the tasks it applies to.
-- Keep each `SKILL.md` under 20,000 characters, the limit Android Studio recommends.
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to report a problem, suggest a skill or submit a change.
 
 ## Disclaimer
 
@@ -197,3 +229,5 @@ AI can make mistakes, so always double-check the results.
 ## License
 
 android-engineering-skills is licensed under the [MIT License](LICENSE). See the `LICENSE` file for details.
+
+See also the [privacy policy](PRIVACY.md) and [terms of use](TERMS.md).
